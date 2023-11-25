@@ -1,16 +1,15 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-
-import 'controllers/controllers.dart';
-import 'data/data.dart';
-import 'res/res.dart';
-import 'utils/utils.dart';
-
-// Files to import
-// connectivity_plus, device_info_plus, file_picker, flutter_screenutil, flutter_secure_storage, get, http, image_picker, package_info_plus, permission_handler, shared_preferences
+import 'package:learning_flutter/controllers/controllers.dart';
+import 'package:learning_flutter/data/data.dart';
+import 'package:learning_flutter/firebase_options.dart';
+import 'package:learning_flutter/res/res.dart';
+import 'package:learning_flutter/utils/utils.dart';
 
 void main() async {
   await _setup();
@@ -19,6 +18,7 @@ void main() async {
 
 Future<void> _setup() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   CommonBinding().dependencies();
   Get.put(DeviceConfig()).init();
   Get.lazyPut(SharedPreferencesManager.new);
@@ -43,11 +43,13 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
-  Widget build(BuildContext context) => GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(primaryColor: Colors.purple),
-        translations: TranslationsFile(),
-        getPages: AppPages.pages,
-        initialRoute: AppPages.initial,
+  Widget build(BuildContext context) => ScreenUtilInit(
+        child: GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(primaryColor: Colors.purple),
+          translations: TranslationsFile(),
+          getPages: AppPages.pages,
+          initialRoute: AppPages.initial,
+        ),
       );
 }

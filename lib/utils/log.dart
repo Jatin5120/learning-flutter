@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import '../res/constants/constants.dart';
+import 'package:learning_flutter/res/constants/constants.dart';
 
 class AppLog {
   ///This Constructor of `AppLog` take 2 parameters

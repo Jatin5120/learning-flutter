@@ -10,3 +10,9 @@ class StringConstants {
   static const String noInternet =
       'No internet connection. Please connect to the internet and try again.';
 }
+
+class CollectionConstants {
+  const CollectionConstants._();
+
+  static const String users = 'users';
+}

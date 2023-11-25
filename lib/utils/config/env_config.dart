@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils.dart';
+import 'package:learning_flutter/utils/utils.dart';
 
 class EnvConfig {
   const EnvConfig({

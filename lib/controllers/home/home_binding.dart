@@ -1,8 +1,7 @@
 import 'package:get/get.dart';
-
-import '../../repositories/repositories.dart';
-import '../../view_models/view_models.dart';
-import 'home_controller.dart';
+import 'package:learning_flutter/controllers/home/home_controller.dart';
+import 'package:learning_flutter/repositories/repositories.dart';
+import 'package:learning_flutter/view_models/view_models.dart';
 
 class HomeBinding implements Bindings {
   @override

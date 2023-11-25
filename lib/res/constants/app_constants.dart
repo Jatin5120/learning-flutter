@@ -1,4 +1,4 @@
-import '../../utils/utils.dart';
+import 'package:learning_flutter/utils/utils.dart';
 
 /// `AppConstants` is a singleton class with all static variables.
 ///

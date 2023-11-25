@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 
-import '../data/data.dart';
-import '../models/models.dart';
-import '../repositories/repositories.dart';
-import '../res/res.dart';
-import '../utils/utils.dart';
+import 'package:learning_flutter/data/data.dart';
+import 'package:learning_flutter/models/models.dart';
+import 'package:learning_flutter/repositories/repositories.dart';
+import 'package:learning_flutter/res/res.dart';
+import 'package:learning_flutter/utils/utils.dart';
 
 class CommonViewModel {
   CommonViewModel(this._repository) : _dbWrapper = Get.find<DBWrapper>();

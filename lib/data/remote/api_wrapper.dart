@@ -3,19 +3,19 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import '../../controllers/controllers.dart';
+import 'package:learning_flutter/controllers/controllers.dart';
 
-import '../../data/data.dart';
-import '../../models/models.dart';
-import '../../res/res.dart';
-import '../../utils/utils.dart';
+import 'package:learning_flutter/data/data.dart';
+import 'package:learning_flutter/models/models.dart';
+import 'package:learning_flutter/res/res.dart';
+import 'package:learning_flutter/utils/utils.dart';
 
 /// API WRAPPER to call all the APIs and handle the status codes
 class ApiWrapper {
-  final http.Client client;
-  final DBWrapper _dbWrapper;
 
   ApiWrapper(this.client) : _dbWrapper = Get.find<DBWrapper>();
+  final http.Client client;
+  final DBWrapper _dbWrapper;
 
   /// Method to make all the requests inside the app like GET, POST, PUT, Delete
   Future<ResponseModel> makeRequest(

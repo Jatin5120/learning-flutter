@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-import '../../controllers/controllers.dart';
-import '../../views/views.dart';
+import 'package:learning_flutter/controllers/controllers.dart';
+import 'package:learning_flutter/views/views.dart';
 
 part 'app_routes.dart';
 
@@ -17,7 +17,7 @@ class AppPages {
     milliseconds: 350,
   );
 
-  static const initial = AppRoutes.splash;
+  static const initial = AppRoutes.auth;
 
   static final pages = [
     GetPage<SplashView>(

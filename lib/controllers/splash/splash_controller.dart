@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../utils/navigators/navigators.dart';
+import 'package:learning_flutter/utils/navigators/navigators.dart';
 
 class SplashController extends GetxController {
   @override

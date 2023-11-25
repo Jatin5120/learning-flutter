@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learning_flutter/utils/utils.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-
-import '../utils.dart';
 
 class AppConfig {
   static Future<void> init(EnvConfig envConfig) async {

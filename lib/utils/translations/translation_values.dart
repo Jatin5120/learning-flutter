@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'translation_keys.dart';
+import 'package:learning_flutter/utils/translations/translation_keys.dart';
 
 part 'translation_en.dart';
 part 'translation_nl.dart';

@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 
-import '../data/data.dart';
-import '../models/models.dart';
-import '../utils/utils.dart';
+import 'package:learning_flutter/data/data.dart';
+import 'package:learning_flutter/models/models.dart';
+import 'package:learning_flutter/utils/utils.dart';
 
 class CommonRepository {
   final ApiWrapper apiWrapper = Get.find<ApiWrapper>();

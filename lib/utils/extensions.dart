@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import '../models/models.dart';
+import 'package:learning_flutter/models/models.dart';
 
 extension NullString on String? {
   bool get isNullOrEmpty => this == null || this!.trim().isEmpty;

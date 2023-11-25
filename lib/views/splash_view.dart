@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/utils.dart';
+import 'package:learning_flutter/utils/utils.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});

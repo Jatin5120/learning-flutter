@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../res/res.dart';
+import 'package:learning_flutter/res/res.dart';
 
 class AppLoader extends StatelessWidget {
   const AppLoader({super.key});

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import 'local.dart';
+import 'package:learning_flutter/data/local/local.dart';
 
 class DBWrapper {
   Future<void> init() async => await _preference.init();

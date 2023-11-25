@@ -1,4 +1,4 @@
-import '../utils.dart';
+import 'package:learning_flutter/utils/utils.dart';
 
 /// `TranslationKeys` is a singleton class that will contain all the translation keys
 ///

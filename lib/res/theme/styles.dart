@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'theme.dart';
+import 'package:learning_flutter/res/theme/theme.dart';
 
 class Styles {
   const Styles._();

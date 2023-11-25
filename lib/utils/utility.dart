@@ -4,11 +4,10 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../models/models.dart';
-import '../res/res.dart';
-import '../widgets/widgets.dart';
-import 'enums.dart';
+import 'package:learning_flutter/models/models.dart';
+import 'package:learning_flutter/res/res.dart';
+import 'package:learning_flutter/utils/enums.dart';
+import 'package:learning_flutter/widgets/widgets.dart';
 
 class Utility {
   const Utility._();
