@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:learning_flutter/controllers/controllers.dart';
 import 'package:learning_flutter/repositories/repositories.dart';
+import 'package:learning_flutter/services/auth_service.dart';
 import 'package:learning_flutter/view_models/view_models.dart';
 
 class AuthBinding implements Bindings {
@@ -8,8 +9,10 @@ class AuthBinding implements Bindings {
   void dependencies() {
     Get.lazyPut<AuthController>(
       () => AuthController(
-        AuthViewModel(
-          AuthRepository(),
+        const AuthViewModel(
+          AuthRepository(
+            AuthService(),
+          ),
         ),
       ),
     );

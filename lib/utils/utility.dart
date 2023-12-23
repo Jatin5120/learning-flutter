@@ -63,7 +63,9 @@ class Utility {
 
   /// Close loader
   static void closeLoader() {
-    closeDialog();
+    if (Get.isDialogOpen ?? false) {
+      closeDialog();
+    }
   }
 
   /// Show error dialog from response model

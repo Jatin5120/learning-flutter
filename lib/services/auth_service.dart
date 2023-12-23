@@ -1,24 +1,39 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:learning_flutter/models/models.dart';
-import 'package:learning_flutter/res/res.dart';
 import 'package:learning_flutter/utils/utils.dart';
 
 class AuthService {
-  const AuthService._();
+  const AuthService();
 
-  static AuthService? _instance;
-
-  static AuthService get instance {
-    _instance ??= const AuthService._();
-    return _instance!;
+  Future<void> login(UserModel user) async {
+    try {
+      Utility.showLoader();
+      var users = await CollectionInterface.user.where('email', isEqualTo: user.email).get();
+      Utility.closeLoader();
+      UserModel? myUser;
+      for (var doc in users.docs) {
+        var data = doc.data();
+        AppLog('${data.runtimeType}: $data');
+        if (data.email == user.email) {
+          myUser = data;
+          break;
+        }
+      }
+      AppLog.success(myUser);
+    } catch (e, st) {
+      Utility.closeLoader();
+      AppLog.error(e, st);
+    }
   }
 
-  static final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
-  void login(UserModel user) async {
-    AppLog(user);
-    var userCollection = _firestore.collection(CollectionConstants.users);
-    await userCollection.add(user.toMap());
-    AppLog.success('User Added successfully');
+  Future<void> signup(UserModel user) async {
+    try {
+      Utility.showLoader();
+      await CollectionInterface.user.add(user);
+      Utility.closeLoader();
+      AppLog.success('User Added successfully');
+    } catch (e, st) {
+      Utility.closeLoader();
+      AppLog.error(e, st);
+    }
   }
 }
