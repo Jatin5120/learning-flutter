@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import 'package:learning_flutter/utils/navigators/app_pages.dart';
 
 abstract class RouteManagement {

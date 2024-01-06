@@ -1,12 +1,13 @@
 import 'dart:convert';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learning_flutter/models/models.dart';
 import 'package:learning_flutter/res/res.dart';
-import 'package:learning_flutter/utils/enums.dart';
+import 'package:learning_flutter/utils/utils.dart';
 import 'package:learning_flutter/widgets/widgets.dart';
 
 class Utility {
@@ -213,6 +214,17 @@ class Utility {
     var currentFocus = FocusScope.of(context);
     if (!currentFocus.hasPrimaryFocus) {
       currentFocus.unfocus();
+    }
+  }
+
+  static handleFirebaseExceptions(FirebaseAuthException e, StackTrace? st) {
+    switch (AppExceptions.fromMessage(e.code)) {
+      case AppExceptions.operationNotAllowed:
+        AppLog.error('OperationNotAllowed Exception $e', st);
+        break;
+      case AppExceptions.adminRestrictedOperation:
+        AppLog.error('AdminRestrictedOperation Exception $e', st);
+        break;
     }
   }
 }

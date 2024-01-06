@@ -1,8 +1,29 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:learning_flutter/models/models.dart';
 import 'package:learning_flutter/utils/utils.dart';
 
 class AuthService {
   const AuthService();
+
+  static final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+  Future<bool> anonymousLogin() async {
+    try {
+      Utility.showLoader();
+      final creds = await _firebaseAuth.signInAnonymously();
+      Utility.closeDialog();
+      AppLog.success(creds);
+      return true;
+    } on FirebaseAuthException catch (e, st) {
+      Utility.closeLoader();
+      Utility.handleFirebaseExceptions(e, st);
+      return false;
+    } catch (e, st) {
+      Utility.closeLoader();
+      AppLog.error(e, st);
+      return false;
+    }
+  }
 
   Future<void> login(UserModel user) async {
     try {

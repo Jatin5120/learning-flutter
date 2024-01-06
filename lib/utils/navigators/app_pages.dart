@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import 'package:learning_flutter/controllers/controllers.dart';
 import 'package:learning_flutter/views/views.dart';
 
@@ -17,7 +16,13 @@ class AppPages {
     milliseconds: 350,
   );
 
-  static const initial = AppRoutes.auth;
+  static Transition? get _transition => GetPlatform.isAndroid
+      ? Transition.downToUp
+      : GetPlatform.isIOS
+          ? Transition.rightToLeft
+          : null;
+
+  static const initial = AppRoutes.splash;
 
   static final pages = [
     GetPage<SplashView>(
@@ -25,21 +30,28 @@ class AppPages {
       transitionDuration: transitionDuration,
       page: SplashView.new,
       binding: SplashBinding(),
-      transition: Transition.rightToLeft,
+      transition: _transition,
     ),
     GetPage<HomeView>(
       name: HomeView.route,
       transitionDuration: transitionDuration,
       page: HomeView.new,
       binding: HomeBinding(),
-      transition: Transition.rightToLeft,
+      transition: _transition,
     ),
     GetPage<AuthView>(
       name: AuthView.route,
       transitionDuration: transitionDuration,
       page: AuthView.new,
       binding: AuthBinding(),
-      transition: Transition.rightToLeft,
+      transition: _transition,
+    ),
+    GetPage<EmailLoginView>(
+      name: EmailLoginView.route,
+      transitionDuration: transitionDuration,
+      page: EmailLoginView.new,
+      binding: AuthBinding(),
+      transition: _transition,
     ),
   ];
 }

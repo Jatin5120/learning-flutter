@@ -1,10 +1,13 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learning_flutter/models/models.dart';
 import 'package:learning_flutter/utils/utils.dart';
 import 'package:learning_flutter/view_models/view_models.dart';
 
-class AuthController extends GetxController {
+part 'mixin/provider_mixin.dart';
+
+class AuthController extends GetxController with AuthProviderMixin {
   AuthController(this._viewModel);
 
   final AuthViewModel _viewModel;

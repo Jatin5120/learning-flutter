@@ -7,6 +7,8 @@ class AuthViewModel {
 
   final AuthRepository _repository;
 
+  Future<bool> anonymousLogin() => _repository.anonymousLogin();
+
   Future<void> login(UserModel user) async {
     try {
       await _repository.login(user);
